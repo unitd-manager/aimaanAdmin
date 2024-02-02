@@ -2,13 +2,11 @@ import React, { useEffect, useState, useContext } from 'react';
 import { Card, CardBody,Row,Col,Form,FormGroup,Label,Input,Button,Modal,ModalHeader,ModalBody, ModalFooter, } from 'reactstrap';
 import Swal from 'sweetalert2';
 import PropTypes from 'prop-types';
-import moment from 'moment';
 import * as Icon from 'react-feather';
 import message from '../Message';
 import api from '../../constants/api';
 import creationdatetime from '../../constants/creationdatetime';
 import AppContext from '../../context/AppContext';
-
 
 function ViewFileComponentV2({ moduleId, roomName,update,setUpdate }) {
   ViewFileComponentV2.propTypes = {
@@ -82,6 +80,7 @@ const editAudioData = () => {
       .post('/content/editAudioData', editaudiodetails)
       .then(() => {
         message('Record edited successfully', 'success');
+        window.location.reload();
       })
       .catch(() => {
         message('Unable to edit record.', 'error');
@@ -177,11 +176,11 @@ useEffect(() => {
                       <Row>
                         <Col md="3">
                           <FormGroup>
-                            <Label>Tag</Label>
+                            <Label>Title</Label>
                             <Input type="text" 
                             onChange={handleInputs} 
-                            defaultValue={editaudiodetails && editaudiodetails.tag} 
-                            name="tag"/>
+                            value={editaudiodetails && editaudiodetails.display_title} 
+                            name="display_title"/>
                           </FormGroup>
                         </Col>
                         <Col md="3">
@@ -189,30 +188,21 @@ useEffect(() => {
                             <Label>Author Name</Label>
                             <Input type="text" 
                             onChange={handleInputs} 
-                            defaultValue={editaudiodetails && editaudiodetails.author_name} 
+                            value={editaudiodetails && editaudiodetails.author_name} 
                             name="author_name"/>
                           </FormGroup>
                         </Col>
-                        <Col md="3">
-                          <FormGroup>
-                            <Label>Date</Label>
-                            <Input type="date" 
-                            onChange={handleInputs} 
-                            defaultValue={editaudiodetails && moment(editaudiodetails.date).format('YYYY-MM-DD')}
-                            name="date" />
-                          </FormGroup>
-                        </Col>
-                        <Col md="3">
-                          <FormGroup>
-                            <Label>Published Date</Label>
-                            <Input type="date" 
-                            onChange={handleInputs} 
-                            defaultValue={editaudiodetails && moment(editaudiodetails.published_date).format('YYYY-MM-DD')}
-                            name="published_date"/>
-                          </FormGroup>
-                        </Col>
-                        
+                                             
                         </Row>
+                        <Col md="3">
+                          <FormGroup>
+                            <Label>Sort Order</Label>
+                            <Input type="number" 
+                            onChange={handleInputs} 
+                            value={editaudiodetails && editaudiodetails.sort_order} 
+                            name="sort_order"/>
+                          </FormGroup>
+                        </Col>
                         <Row>
                         <Col md="6">
                           <FormGroup>

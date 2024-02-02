@@ -150,35 +150,82 @@ const ContentUpdate = () => {
               <Col md="3">
                 <FormGroup>
                   {/* Category title from Category table */}
-                  <Label>Email</Label>
+                  <Label>Location</Label>
                   <Input
                     type="text"
                     onChange={handleInputs}
-                    value={contentDetails && contentDetails.email}
-                    name="email"
+                    value={contentDetails && contentDetails.address}
+                    name="address"
                   />
                 </FormGroup>
               </Col>
               <Col md="3">
                 <FormGroup>
                   {/* Category title from Category table */}
-                  <Label>Password</Label>
-                  <Input
-                    type="text"
-                    onChange={handleInputs}
-                    value={contentDetails && contentDetails.pass_word}
-                    name="pass_word"
-                  />
-                </FormGroup>
-              </Col>
-              <Col md="3">
-                <FormGroup>
-                <Label>Address</Label>
+                  <Label>Native</Label>
                   <Input
                     type="text"
                     onChange={handleInputs}
                     value={contentDetails && contentDetails.address1}
                     name="address1"
+                  />
+                </FormGroup>
+              </Col>
+              <Col md="3">
+                <FormGroup>
+                  {/* Category title from Category table */}
+                  <Label>Year of birth</Label>
+                  <Input
+                    type="text"
+                    onChange={handleInputs}
+                    value={contentDetails && contentDetails.birth_year}
+                    name="birth_year"
+                  />
+                </FormGroup>
+              </Col>
+              <Col md="3">
+                <FormGroup>
+                  {/* Category title from Category table */}
+                  <Label>Present Profession/Job</Label>
+                  <Input
+                    type="text"
+                    onChange={handleInputs}
+                    value={contentDetails && contentDetails.position}
+                    name="position"
+                  />
+                </FormGroup>
+              </Col>
+              <Col md="3">
+                <FormGroup>
+                  {/* Category title from Category table */}
+                  <Label>Since in UAE</Label>
+                  <Input
+                    type="text"
+                    onChange={handleInputs}
+                    value={contentDetails && contentDetails.from_year}
+                    name="from_year"
+                  />
+                </FormGroup>
+              </Col>
+              <Col md="4">
+                <FormGroup>
+                  <Label>Willing to volunteer</Label>
+                  <br></br>
+                  <Label>Yes</Label>
+                  <Input
+                    name="published"
+                    value="1"
+                    type="radio"
+                    defaultChecked={contentDetails && contentDetails.published === 1 && true}
+                    onChange={handleInputs}
+                  />
+                  <Label>No</Label>
+                  <Input
+                    name="published"
+                    value="0"
+                    type="radio"
+                    defaultChecked={contentDetails && contentDetails.published === 0 && true}
+                    onChange={handleInputs}
                   />
                 </FormGroup>
               </Col>

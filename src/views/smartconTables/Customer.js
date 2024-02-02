@@ -88,26 +88,18 @@ const Customer = () => {
       wrap: true,
     },
     {
-      name: 'Email',
-      selector: 'email',
+      name: 'Location',
+      selector: 'address',
       sortable: true,
       grow: 0,
     },
+ 
     {
-      name: 'Password',
-      selector: 'pass_word',
-      sortable: true,
-      width: 'auto',
-      grow: 3,
-    },
-    {
-      name: 'Mobile',
+      name: 'Contact No',
       selector: 'mobile',
       sortable: true,
       grow: 0,
-      wrap: true,
-    },
-    
+    }, 
     {
       name: 'Creation Date',
       selector: 'creation_date',
@@ -152,8 +144,7 @@ const Customer = () => {
                   </td>
                   <td>{element.contact_id}</td>
                   <td>{element.first_name}</td>
-                  <td>{element.email}</td>
-                  <td>{element.pass_word}</td>
+                  <td>{element.address}</td>
                   <td>{element.mobile}</td>
                   <td>{element.creation_date}</td>
                 

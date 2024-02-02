@@ -132,7 +132,7 @@ const [addVideoModal,setAddVideoModal] = useState();
         convertHtmlToDraft(res.data.data.description);
       })
       .catch(() => {
-        message('Content Data Not Found', 'info');
+       
       });
   };
   //Edit Content
